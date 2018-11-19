@@ -11,7 +11,14 @@ function countrySearch(){
         }
     };
     
-    var url = "world.php?country="+query;
+    if (document.getElementById('allChkBox').checked)
+    {
+        var url = "world.php?all=true";
+    }
+    else
+    {
+        var url = "world.php?country="+query;
+    }
     
     httprequest.open("GET",url,true);
     httprequest.send("");
